@@ -86,6 +86,10 @@ Once you've done that, you have the complete code.
 History Log
 =============
 
+- 0.2.0 -- 2019-04-29
+
+    - add prototypes for 5 projects 
+    
 - 0.1.0 -- 2019-04-26
 
     - add assets for looplab prototype version 
