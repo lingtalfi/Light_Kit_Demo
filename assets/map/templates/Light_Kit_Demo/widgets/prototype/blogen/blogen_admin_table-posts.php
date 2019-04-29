@@ -1,3 +1,19 @@
+<?php
+
+
+$baseUrl = explode("?", $_SERVER['REQUEST_URI'])[0];
+$get = $_GET;
+unset($get['page']);
+
+
+$link = function ($page) use ($get, $baseUrl) {
+    return $baseUrl . "?" . http_build_query(array_merge($get, [
+            "page" => $page,
+        ]));
+};
+
+
+?>
 <!-- POSTS -->
 <section id="posts">
     <div class="container">
@@ -24,7 +40,7 @@
                             <td>Web Development</td>
                             <td>May 10 2018</td>
                             <td>
-                                <a href="/details" class="btn btn-secondary">
+                                <a href="<?php echo $link('details'); ?>" class="btn btn-secondary">
                                     <i class="fas fa-angle-double-right"></i> Details
                                 </a>
                             </td>
@@ -35,7 +51,7 @@
                             <td>Tech Gadgets</td>
                             <td>May 11 2018</td>
                             <td>
-                                <a href="/details" class="btn btn-secondary">
+                                <a href="<?php echo $link('details'); ?>" class="btn btn-secondary">
                                     <i class="fas fa-angle-double-right"></i> Details
                                 </a>
                             </td>
@@ -46,7 +62,7 @@
                             <td>Web Development</td>
                             <td>May 13 2018</td>
                             <td>
-                                <a href="/details" class="btn btn-secondary">
+                                <a href="<?php echo $link('details'); ?>" class="btn btn-secondary">
                                     <i class="fas fa-angle-double-right"></i> Details
                                 </a>
                             </td>
@@ -57,7 +73,7 @@
                             <td>Business</td>
                             <td>May 15 2018</td>
                             <td>
-                                <a href="/details" class="btn btn-secondary">
+                                <a href="<?php echo $link('details'); ?>" class="btn btn-secondary">
                                     <i class="fas fa-angle-double-right"></i> Details
                                 </a>
                             </td>
@@ -68,7 +84,7 @@
                             <td>Web Development</td>
                             <td>May 17 2018</td>
                             <td>
-                                <a href="/details" class="btn btn-secondary">
+                                <a href="<?php echo $link('details'); ?>" class="btn btn-secondary">
                                     <i class="fas fa-angle-double-right"></i> Details
                                 </a>
                             </td>
@@ -79,7 +95,7 @@
                             <td>Health & Wellness</td>
                             <td>May 20 2018</td>
                             <td>
-                                <a href="/details" class="btn btn-secondary">
+                                <a href="<?php echo $link('details'); ?>" class="btn btn-secondary">
                                     <i class="fas fa-angle-double-right"></i> Details
                                 </a>
                             </td>

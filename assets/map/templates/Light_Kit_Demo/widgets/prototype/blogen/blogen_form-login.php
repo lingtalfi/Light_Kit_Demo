@@ -1,4 +1,19 @@
+<?php
 
+
+$baseUrl = explode("?", $_SERVER['REQUEST_URI'])[0];
+$get = $_GET;
+unset($get['page']);
+
+
+$link = function ($page) use ($get, $baseUrl) {
+    return $baseUrl . "?" . http_build_query(array_merge($get, [
+            "page" => $page,
+        ]));
+};
+
+
+?>
 <!-- LOGIN -->
 <section id="login">
     <div class="container">
@@ -9,7 +24,7 @@
                         <h4>Account Login</h4>
                     </div>
                     <div class="card-body">
-                        <form action="/">
+                        <form action="<?php echo $link('dashboard'); ?>">
                             <div class="form-group">
                                 <label>Email</label>
                                 <input type="text" class="form-control">

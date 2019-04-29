@@ -1,22 +1,38 @@
+<?php
+
+
+$baseUrl = explode("?", $_SERVER['REQUEST_URI'])[0];
+$get = $_GET;
+unset($get['page']);
+
+
+$link = function ($page) use ($get, $baseUrl) {
+    return $baseUrl . "?" . http_build_query(array_merge($get, [
+            "page" => $page,
+        ]));
+};
+
+
+?>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
-        <a href="/" class="navbar-brand">Blogen</a>
+        <a href="<?php echo $link('dashboard'); ?>" class="navbar-brand">Blogen</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item px-2">
-                    <a href="/" class="nav-link active">Dashboard</a>
+                    <a href="<?php echo $link('dashboard'); ?>" class="nav-link active">Dashboard</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="/posts" class="nav-link">Posts</a>
+                    <a href="<?php echo $link('posts'); ?>" class="nav-link">Posts</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="/categories" class="nav-link">Categories</a>
+                    <a href="<?php echo $link('categories'); ?>" class="nav-link">Categories</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="/users" class="nav-link">Users</a>
+                    <a href="<?php echo $link('users'); ?>" class="nav-link">Users</a>
                 </li>
             </ul>
 
@@ -26,16 +42,16 @@
                         <i class="fas fa-user"></i> Welcome Brad
                     </a>
                     <div class="dropdown-menu">
-                        <a href="/profile" class="dropdown-item">
+                        <a href="<?php echo $link('profile'); ?>" class="dropdown-item">
                             <i class="fas fa-user-circle"></i> Profile
                         </a>
-                        <a href="/settings" class="dropdown-item">
+                        <a href="<?php echo $link('settings'); ?>" class="dropdown-item">
                             <i class="fas fa-cog"></i> Settings
                         </a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="/login" class="nav-link">
+                    <a href="<?php echo $link('login'); ?>" class="nav-link">
                         <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>

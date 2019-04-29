@@ -1,3 +1,19 @@
+<?php
+
+
+$baseUrl = explode("?", $_SERVER['REQUEST_URI'])[0];
+$get = $_GET;
+unset($get['page']);
+
+
+$link = function ($page) use ($get, $baseUrl) {
+    return $baseUrl . "?" . http_build_query(array_merge($get, [
+            "page" => $page,
+        ]));
+};
+
+
+?>
 
 <!-- USERS -->
 <section id="users">
@@ -23,7 +39,7 @@
                             <td>John Doe</td>
                             <td>jdoe@gmail.com</td>
                             <td>
-                                <a href="/details" class="btn btn-secondary">
+                                <a href="<?php echo $link('details'); ?>" class="btn btn-secondary">
                                     <i class="fas fa-angle-double-right"></i> Details
                                 </a>
                             </td>
@@ -33,7 +49,7 @@
                             <td>Harry White</td>
                             <td>harry@yahoo.com</td>
                             <td>
-                                <a href="/details" class="btn btn-secondary">
+                                <a href="<?php echo $link('details'); ?>" class="btn btn-secondary">
                                     <i class="fas fa-angle-double-right"></i> Details
                                 </a>
                             </td>
@@ -43,7 +59,7 @@
                             <td>Mary Johnson</td>
                             <td>mary@gmail.com</td>
                             <td>
-                                <a href="/details" class="btn btn-secondary">
+                                <a href="<?php echo $link('details'); ?>" class="btn btn-secondary">
                                     <i class="fas fa-angle-double-right"></i> Details
                                 </a>
                             </td>
