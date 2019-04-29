@@ -86,6 +86,10 @@ Once you've done that, you have the complete code.
 History Log
 =============
 
+- 0.4.0 -- 2019-04-29
+
+    - adjust active navigation item  
+    
 - 0.3.0 -- 2019-04-29
 
     - adjust paths for multi-pages prototypes  

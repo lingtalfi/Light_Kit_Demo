@@ -12,6 +12,8 @@ $link = function ($page) use ($get, $baseUrl) {
         ]));
 };
 
+$page = $_GET['page'] ?? "home";
+
 
 ?>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -22,19 +24,19 @@ $link = function ($page) use ($get, $baseUrl) {
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item <?php echo ("home" === $page) ? "active" : ""; ?>">
                     <a href="<?php echo $link('home'); ?>" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo ("about" === $page) ? "active" : ""; ?>">
                     <a href="<?php echo $link('about'); ?>" class="nav-link">About</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo ("services" === $page) ? "active" : ""; ?>">
                     <a href="<?php echo $link('services'); ?>" class="nav-link">Services</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo ("blog" === $page) ? "active" : ""; ?>">
                     <a href="<?php echo $link('blog'); ?>" class="nav-link">Blog</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?php echo ("contact" === $page) ? "active" : ""; ?>">
                     <a href="<?php echo $link('contact'); ?>" class="nav-link">Contact</a>
                 </li>
             </ul>

@@ -13,6 +13,9 @@ $link = function ($page) use ($get, $baseUrl) {
 };
 
 
+$page = $_GET['page'] ?? "dashboard";
+
+
 ?>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
@@ -23,16 +26,16 @@ $link = function ($page) use ($get, $baseUrl) {
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item px-2">
-                    <a href="<?php echo $link('dashboard'); ?>" class="nav-link active">Dashboard</a>
+                    <a href="<?php echo $link('dashboard'); ?>" class="nav-link <?php echo ("dashboard" === $page) ? "active" : ""; ?>">Dashboard</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="<?php echo $link('posts'); ?>" class="nav-link">Posts</a>
+                    <a href="<?php echo $link('posts'); ?>" class="nav-link <?php echo ("posts" === $page) ? "active" : ""; ?>">Posts</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="<?php echo $link('categories'); ?>" class="nav-link">Categories</a>
+                    <a href="<?php echo $link('categories'); ?>" class="nav-link <?php echo ("categories" === $page) ? "active" : ""; ?>">Categories</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="<?php echo $link('users'); ?>" class="nav-link">Users</a>
+                    <a href="<?php echo $link('users'); ?>" class="nav-link <?php echo ("users" === $page) ? "active" : ""; ?>">Users</a>
                 </li>
             </ul>
 

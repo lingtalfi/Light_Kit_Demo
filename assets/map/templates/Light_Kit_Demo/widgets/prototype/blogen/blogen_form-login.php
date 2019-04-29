@@ -24,7 +24,7 @@ $link = function ($page) use ($get, $baseUrl) {
                         <h4>Account Login</h4>
                     </div>
                     <div class="card-body">
-                        <form action="<?php echo $link('dashboard'); ?>">
+                        <form action="<?php echo $link('dashboard'); ?>" method="post">
                             <div class="form-group">
                                 <label>Email</label>
                                 <input type="text" class="form-control">
