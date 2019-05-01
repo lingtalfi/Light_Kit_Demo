@@ -30,8 +30,10 @@ Or just download it and place it where you want otherwise.
 Summary
 ===========
 - [Light_Kit_Demo api](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/doc/api/Ling/Light_Kit_Demo.md) (generated with [DocTools](https://github.com/lingtalfi/DocTools))
-
-
+- [The demos](#the-demos)
+- [What is this?](#what-is-this)
+- [The prototype organization](#the-prototype-organization)
+- [History Log](#history-log)
 
 
 The demos
