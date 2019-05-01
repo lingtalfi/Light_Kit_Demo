@@ -132,6 +132,47 @@ Then the **templates/Light_Kit_Demo/widgets/prototype/looplab** directory contai
 And last but not least the **www/plugins/Light_Kit_Demo/looplab** directory contains all the assets used for the LoopLab theme.
 
 
+On the server side, I just use regular Light code, here is my code for the looplab demo:
+
+
+```php
+<?php
+
+
+use Ling\Light\Core\Light;
+use Ling\Light\Helper\ServiceContainerHelper;
+use Ling\Light\ServiceContainer\LightServiceContainerInterface;
+
+
+require_once __DIR__ . "/../../../universe/bigbang.php"; // activate universe
+
+
+
+
+
+
+$appDir = __DIR__ . "/../../..";
+$container = ServiceContainerHelper::getInstance($appDir, [
+    'type' => 'red',
+]);
+
+$light = new Light();
+$light->setDebug(true);
+$light->setContainer($container);
+
+
+$light->registerRoute("/Light_Kit_Demo", function (LightServiceContainerInterface $service) {
+    return $service->get("kit")->renderPage('Light_Kit_Demo/looplab/prototype/looplab_home');
+});
+$light->run();
+
+```
+
+
+Note that since I was using a server of mine and I wanted to use only one url namespace for all demos,
+I used $_GET variables to navigate around the demos (site and page variables to be more precise),
+but that's just specific to my server, you can create one url per page if you want, or whatever.
+
 
 
 
