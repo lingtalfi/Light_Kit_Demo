@@ -39,7 +39,7 @@ Summary
 The demos
 ===========
 
-Checkout the my [5 Light Kit demos](http://lingtalfi.com/Light_Kit_Demo).
+Checkout the [5 Light Kit demos](http://lingtalfi.com/Light_Kit_Demo).
 
 All the demos are themes created by Brad Traversy in this course [Bootstrap 4 From Scratch With 5 Projects ](https://www.udemy.com/bootstrap-4-from-scratch-with-5-projects/).
 
