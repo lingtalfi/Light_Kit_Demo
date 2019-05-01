@@ -60,7 +60,7 @@ What is this?
 ============
 
 
-The goal of this planet is to help anybody creating website with [Light_Kit](https://github.com/lingtalfi/Light_Kit).
+The goal of this [planet](https://github.com/karayabin/universe-snapshot) is to help anybody creating website with [Light_Kit](https://github.com/lingtalfi/Light_Kit).
 
 It does so by providing 5 examples of websites (in this case all created with boostrap 4), along with the source code.
 
