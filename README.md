@@ -319,9 +319,15 @@ zones:
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MainNavWidget
             widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
             template: default.php
+            skin: looplab-nav
             vars:
-                title: LoopLab
+                attr:
+                    id: main-nav
+                    class: bg-dark navbar-dark looplab-nav
+                title: LoopLAB
                 fixed_top: true
+                use_scrollspy: true
+                use_smooth_scrolling: true
                 title_url: /
                 expand_size: sm
                 links:
@@ -347,6 +353,8 @@ zones:
             widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsSignupFormWidget
             template: default.php
             vars:
+                attr:
+                    id: home
                 showTeaser: true
                 form_align_right: false
                 teaser_visible_size: lg
@@ -395,7 +403,6 @@ zones:
                 attr:
                     class: looplab-dark
                     id: explore-head-section
-                    id: create-head-section
                 title: Explore
                 text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
                 button_url: '#'
@@ -538,7 +545,6 @@ zones:
 
 
 
-
 ```
 
 
@@ -577,6 +583,7 @@ The layout used by the LoopLab home page has the following content.
  */
 
 
+use Ling\Bat\StringTool;
 use Ling\Light_Kit\PageRenderer\LightKitPageRenderer;
 
 
@@ -600,12 +607,11 @@ $container = $this->getContainer();
           crossorigin="anonymous">
 
 
-
     <link rel="stylesheet"
           href="<?php echo $container->get('kit_css_file_generator')->generate($this->copilot, $this->pageName); ?>">
 
 
-        <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <?php if (true === $this->copilot->hasTitle()): ?>
         <title><?php echo $this->copilot->getTitle(); ?></title><?php endif; ?>
@@ -616,7 +622,7 @@ $container = $this->getContainer();
 
 </head>
 
-<body data-spy="scroll" data-target="#main-nav" id="home">
+<body <?php echo StringTool::htmlAttributes($this->copilot->getBodyTagAttributes()); ?>>
 
 
 <?php $this->printZone("main_zone"); ?>
@@ -651,27 +657,22 @@ $container = $this->getContainer();
         // Get the current year for the copyright
         $('#year').text(new Date().getFullYear());
 
-        // Init Scrollspy
-        $('body').scrollspy({target: '#main-nav'});
 
-
-        // Smooth Scrolling
-        $("#main-nav a").on('click', function (event) {
-            if (this.hash !== "") {
-                event.preventDefault();
-
-                const hash = this.hash;
-
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function () {
-
-                    window.location.hash = hash;
-                });
-            }
-        });
     });
 </script>
+
+<?php if (true === $this->copilot->hasJsCodeBlocks()): ?>
+
+    <script>
+
+        <?php $blocks = $this->copilot->getJsCodeBlocks(); ?>
+        <?php foreach($blocks as $block): ?>
+        <?php echo $block; ?>
+        <?php endforeach; ?>
+
+    </script>
+
+<?php endif; ?>
 </body>
 
 </html>
