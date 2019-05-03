@@ -320,24 +320,10 @@ zones:
             widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
             template: default.php
             vars:
-                title: MySite
-
-                # Whether the top nav is fixed on the top
+                title: LoopLab
                 fixed_top: true
-
-                # the string to put in the href attribute of the title link.
-                # It can be an anchor if necessary
-                # The default value is slash
                 title_url: /
-
-                # If not set, the title will not use a logo
-                # If set, the title_logo must define all parameters as the example below
-#                title_logo:
-#                    url: /plugins/Light_Kit_Demo/mizuxe/img/mlogo.png
-#                    width: 50
-#                    height: 50
-#                    alt: Mizuxe logo
-                expand_size: sm # at which size does the burger menu expand (sm | md | lg) = sm
+                expand_size: sm
                 links:
                     -
                         text: Home
@@ -353,32 +339,7 @@ zones:
                     -
                         text: Share
                         url: "#share-head-section"
-
-                # An additional css class to add to all link items. Example: px-2
-#                links_item_class: px-2
-
-
-                links_align_right: false
-
-                links2:
-                    -
-                        text: Welcome John
-                        url: "#"
-                        icon: fas fa-user
-                        children:
-                            -
-                                text: Profile
-                                url: "#create-head-section"
-                                icon: fas fa-user-circle
-                            -
-                                text: Settings
-                                url: "#create-head-section"
-                                icon: fas fa-cog
-                    -
-                        text: Log out
-                        url: "#share-head-section"
-                        icon: fas fa-user-times
-                links2_align_right: true
+                links_align_right: true
         -
             name: looplab_two_columns_signup_form
             type: picasso
@@ -576,6 +537,8 @@ zones:
 
 
 
+
+
 ```
 
 
@@ -720,6 +683,10 @@ $container = $this->getContainer();
 History Log
 =============
 
+- 0.6.3 -- 2019-05-03
+
+    - update README.md looplab configuration page, now reflects the website more accurately (especially the nav)  
+    
 - 0.6.2 -- 2019-05-03
 
     - update README.md add looplab layout content  
