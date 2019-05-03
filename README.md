@@ -37,6 +37,7 @@ Summary
     - [index.php](#indexphp)
     - [The Light_Kit configuration](#the-light_kit-configuration)
     - [The looplab_home page](#the-looplab_home-page)
+    - [The layout page](#the-layout-page)
 - [History Log](#history-log)
 
 
@@ -597,9 +598,132 @@ Note: this planet is still a work in progress, and I'm currently working on the 
 
 
 
+The layout page
+------------------
+
+The layout used by the LoopLab home page has the following content.
+
+- you can find the layouts for all the themes in the [layout directory of this repository](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/templates/Light_Kit_Demo/layouts)
+
+```php
+<?php
+
+
+/**
+ * @var $this LightKitPageRenderer
+ */
+
+
+use Ling\Light_Kit\PageRenderer\LightKitPageRenderer;
+
+
+$container = $this->getContainer();
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/plugins/Light_Kit_Demo/looplab/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet"
+          href="<?php echo $container->get('kit_css_file_generator')->generate($this->copilot, $this->pageName); ?>">
+
+
+        <link rel="stylesheet" href="css/style.css">
+
+    <?php if (true === $this->copilot->hasTitle()): ?>
+        <title><?php echo $this->copilot->getTitle(); ?></title><?php endif; ?>
+
+    <?php if (true === $this->copilot->hasDescription()): ?>
+        <meta name="description"
+              content="<?php echo htmlspecialchars($this->copilot->getDescription()); ?>"><?php endif; ?>
+
+</head>
+
+<body data-spy="scroll" data-target="#main-nav" id="home">
+
+
+<?php $this->printZone("main_zone"); ?>
+
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+
+        /**
+         * Adds a top padding automatically to the first .container element, except if it's
+         * the .container inside the top nav element.
+         *
+         * Note: depending on your layout, this might be a good/bad idea.
+         * You might also want to first arrange your page, then when done, change the css manually (i.e. not
+         * using a javascript solution like this).
+         *
+         */
+        $('.container').not("nav .container").first().addClass('first-container');
+
+
+        // Get the current year for the copyright
+        $('#year').text(new Date().getFullYear());
+
+        // Init Scrollspy
+        $('body').scrollspy({target: '#main-nav'});
+
+
+        // Smooth Scrolling
+        $("#main-nav a").on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+
+                const hash = this.hash;
+
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+</html>
+```
+
+
+
+
 History Log
 =============
 
+- 0.6.2 -- 2019-05-03
+
+    - update README.md add looplab layout content  
+    
 - 0.6.1 -- 2019-05-03
 
     - fix README.md looplab page example missing ids  

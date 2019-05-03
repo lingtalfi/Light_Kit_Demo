@@ -32,19 +32,14 @@ zones:
 #                        icon: fas fa-user
                     -
                         text: About
-                        url: "#explore-head-section"
+                        url: "#about"
 
                     -
-                        text:
-                        url: "#create-head-section"
+                        text: Meet The Authors
+                        url: "#authors"
                     -
-                        text: Share
-                        url: "#share-head-section"
-
-                # An additional css class to add to all link items. Example: px-2
-#                links_item_class: px-2
-
-
+                        text: Contact
+                        url: "#contact"
                 links_align_right: true
 
         -

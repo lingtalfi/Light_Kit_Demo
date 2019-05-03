@@ -34,7 +34,7 @@ $container = $this->getContainer();
           href="<?php echo $container->get('kit_css_file_generator')->generate($this->copilot, $this->pageName); ?>">
 
 
-<!--        <link rel="stylesheet" href="css/style.css">-->
+        <link rel="stylesheet" href="css/style.css">
 
     <?php if (true === $this->copilot->hasTitle()): ?>
         <title><?php echo $this->copilot->getTitle(); ?></title><?php endif; ?>
