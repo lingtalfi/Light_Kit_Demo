@@ -33,6 +33,10 @@ Summary
 - [The demos](#the-demos)
 - [What is this?](#what-is-this)
 - [The prototype organization](#the-prototype-organization)
+- [The real website organization](#the-real-website-organization)
+    - [index.php](#indexphp)
+    - [The Light_Kit configuration](#the-light_kit-configuration)
+    - [The looplab_home page](#the-looplab_home-page)
 - [History Log](#history-log)
 
 
@@ -76,9 +80,6 @@ A prototype widget is just a static html widget, it's not administrable with php
 
 The real website is the version with working widgets (php driven widgets).
 
- 
-This planet is still a work in progress, and I'm currently working on the real websites versions, but 
-the prototype versions are done already.
 
 The benefit for me to create a prototype version, is that I can show you the demos right now, without you
 having to wait for me to create all php widgets (which might take quite some time).
@@ -176,9 +177,425 @@ but that's just specific to my server, you can create one url per page if you wa
 
 
 
+
+The real website organization
+==============
+
+Let's create the [LoopLab theme](http://lingtalfi/Light_Kit_Demo?site=looplab) using real widgets.
+
+
+
+
+index.php
+-----------------
+
+Let's start with the entry point of the web application, **index.php** in my case:
+
+```php
+<?php
+
+
+use Ling\Light\Core\Light;
+use Ling\Light\Helper\ServiceContainerHelper;
+use Ling\Light\ServiceContainer\LightServiceContainerInterface;
+
+
+require_once __DIR__ . "/../../../universe/bigbang.php"; // activate universe
+
+
+
+
+
+// we're using a service container
+$appDir = __DIR__ . "/../../..";
+$container = ServiceContainerHelper::getInstance($appDir, [
+    'type' => 'red',
+]);
+
+
+// instantiate the light 
+$light = new Light();
+$light->setDebug(true); // set that to false in production
+$light->setContainer($container);
+
+
+$light->registerRoute("/Light_Kit_Demo", function (LightServiceContainerInterface $service) {
+    return $service->get("kit")->renderPage('Light_Kit_Demo/looplab/looplab_home');
+});
+$light->run();
+
+```
+
+
+
+The Light_Kit configuration
+-------------
+
+Here is the kit configuration I'm using.
+
+Reminder: the kit service is injected automatically in your app when you import the [Light_Kit planet](https://github.com/lingtalfi/Light_Kit).
+
+```yaml
+kit:
+    instance: Ling\Light_Kit\PageRenderer\LightKitPageRenderer
+    methods:
+        configure:
+            settings:
+                application_dir: ${app_dir}
+        setConfStorage:
+            -
+                instance: Ling\Kit\ConfStorage\BabyYamlConfStorage
+                methods:
+                    setRootDir:
+                        rootDir: ${app_dir}/config/kit/pages
+        setContainer:
+            container: @container()
+
+    methods_collection:
+        -
+            method: registerWidgetHandler
+            args:
+                - picasso
+                -
+                    instance: Ling\Kit_PicassoWidget\WidgetHandler\PicassoWidgetHandler
+                    constructor_args:
+                        options:
+                            showCssNuggetHeaders: true
+                            showJsNuggetHeaders: true
+                    methods:
+                        setWidgetBaseDir:
+                            dir: ${app_dir}
+        -
+            method: registerWidgetHandler
+            args:
+                - prototype
+                -
+                    instance: Ling\Kit_PrototypeWidget\WidgetHandler\PrototypeWidgetHandler
+                    methods:
+                        setRootDir:
+                            appDir: ${app_dir}
+
+
+kit_css_file_generator:
+    instance: Ling\Light_Kit\CssFileGenerator\LightKitCssFileGenerator
+    constructor_args:
+        rootDir: ${app_dir}/www
+        format: css/tmp/$identifier-compiled-widgets.css
+```
+
+
+I pasted it here so that you can notice that I'm using a BabyYamlConfStorage, which rootDir is **${app_dir}/config/kit/pages**.
+
+That's important, because that's where the page files will be found.
+
+
+The looplab_home page
+-----------
+
+From the **index.php**, we call the **Light_Kit_Demo/looplab/looplab_home** page.
+
+Now because of the kit service configuration we are using, this path resolves to **${app_dir}/config/kit/pages/Light_Kit_Demo/looplab/looplab_home.byml**.
+
+
+What follows is the content of that file:
+
+
+```yaml
+label: LoopLab main page
+layout: templates/Light_Kit_Demo/layouts/looplab/looplab_main_layout.php
+layout_vars: []
+
+title: LoopLab one page theme
+description: <
+    This is the LoopLab one page theme, created by Brad Traversy, and implemented with the Light_Kit plugin from the Light framework.
+>
+
+zones:
+    main_zone:
+        -
+            name: main_nav
+            type: picasso
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MainNavWidget
+            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
+            template: default.php
+            vars:
+                title: MySite
+
+                # Whether the top nav is fixed on the top
+                fixed_top: true
+
+                # the string to put in the href attribute of the title link.
+                # It can be an anchor if necessary
+                # The default value is slash
+                title_url: /
+
+                # If not set, the title will not use a logo
+                # If set, the title_logo must define all parameters as the example below
+#                title_logo:
+#                    url: /plugins/Light_Kit_Demo/mizuxe/img/mlogo.png
+#                    width: 50
+#                    height: 50
+#                    alt: Mizuxe logo
+                expand_size: sm # at which size does the burger menu expand (sm | md | lg) = sm
+                links:
+                    -
+                        text: Home
+                        url: "#home"
+#                        icon: fas fa-user
+                    -
+                        text: Explore
+                        url: "#explore-head-section"
+
+                    -
+                        text: Create
+                        url: "#create-head-section"
+                    -
+                        text: Share
+                        url: "#share-head-section"
+
+                # An additional css class to add to all link items. Example: px-2
+#                links_item_class: px-2
+
+
+                links_align_right: false
+
+                links2:
+                    -
+                        text: Welcome John
+                        url: "#"
+                        icon: fas fa-user
+                        children:
+                            -
+                                text: Profile
+                                url: "#create-head-section"
+                                icon: fas fa-user-circle
+                            -
+                                text: Settings
+                                url: "#create-head-section"
+                                icon: fas fa-cog
+                    -
+                        text: Log out
+                        url: "#share-head-section"
+                        icon: fas fa-user-times
+                links2_align_right: true
+        -
+            name: looplab_two_columns_signup_form
+            type: picasso
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsSignupFormWidget
+            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsSignupFormWidget
+            template: default.php
+            vars:
+                showTeaser: true
+                form_align_right: false
+                teaser_visible_size: lg
+                teaser_title: Build <strong>social profiles</strong> and gain revenue <strong>profits</strong>
+                teaser_items:
+                    -
+                        icon: fas fa-check fa-2x
+                        text:  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, tempore iusto in minima facere dolorem!
+                    -
+                        icon: fas fa-check fa-2x
+                        text:  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, tempore iusto in minima facere dolorem!
+                    -
+                        icon: fas fa-check fa-2x
+                        text:  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, tempore iusto in minima facere dolorem!
+                form_title: Sign up Today
+                form_subtitle: Please fill out this form to register
+                form_fields:
+                    -
+                        name: username
+                        placeholder: Username
+                        type: text
+                    -
+                        name: email
+                        placeholder: Email
+                        type: text
+                    -
+                        name: password
+                        placeholder: Password
+                        type: password
+                    -
+                        name: confirm_password
+                        placeholder: Confirm Password
+                        type: password
+                form_submit_value: Submit
+                form_submit_class: btn btn-outline-light btn-block
+                background_style: url('/plugins/Light_Kit_Demo/looplab/img/home.jpg')
+
+        -
+            name: looplab_monochrome_header
+            type: picasso
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabMonoChromeHeaderWidget
+            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
+            template: default.php
+            skin: looplab-dark
+            vars:
+                attr:
+                    class: looplab-dark
+                title: Explore
+                text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
+                button_url: '#'
+                button_class: btn btn-outline-secondary
+                button_text: Find Out More
+
+
+        -
+            name: looplab_two_columns_teaser
+            type: picasso
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsTeaserWidget
+            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
+            template: default.php
+            vars:
+                attr:
+                    class: bg-light text-muted py-5
+                img_on_left: true
+                img_rounded: true
+                img_src: img/explore-section1.jpg
+                img_alt: Explore & Connect
+                teaser_title: Explore & Connect
+                teaser_text: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore reiciendis, voluptate at alias laborum odit aliquidtempore perspiciatis repudiandae hic?
+                teaser_items:
+                    -
+                        icon: fas fa-check fa-2x
+                        text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi distinctio iusto, perspiciatis mollitia natus harum?
+                    -
+                        icon: fas fa-check fa-2x
+                        text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi distinctio iusto, perspiciatis mollitia natus harum?
+        -
+            name: looplab_monochrome_header
+            type: picasso
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabMonoChromeHeaderWidget
+            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
+            template: default.php
+            vars:
+                attr:
+                    class: text-white bg-primary
+                title: Create
+                text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
+                button_url: '#'
+                button_class: btn btn-outline-light
+                button_text: Find Out More
+        -
+            name: looplab_two_columns_teaser
+            type: picasso
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsTeaserWidget
+            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
+            template: default.php
+            skin: looplab-dark
+            vars:
+                attr:
+                    class: looplab-dark py-5
+                img_on_left: false
+                img_rounded: true
+                img_src: img/create-section1.jpg
+                img_alt: Create Your Passion
+                teaser_title: Create Your Passion
+                teaser_text: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore reiciendis, voluptate at alias laborum odit aliquidtempore perspiciatis repudiandae hic?
+                teaser_items:
+                    -
+                        icon: fas fa-check fa-2x
+                        text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi distinctio iusto, perspiciatis mollitia natus harum?
+                    -
+                        icon: fas fa-check fa-2x
+                        text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi distinctio iusto, perspiciatis mollitia natus harum?
+        -
+            name: looplab_monochrome_header
+            type: picasso
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabMonoChromeHeaderWidget
+            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
+            template: default.php
+            vars:
+                attr:
+                    class: text-white bg-primary
+                title: Share
+                text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
+                button_url: '#'
+                button_class: btn btn-outline-light
+                button_text: Find Out More
+
+        -
+            name: looplab_two_columns_teaser
+            type: picasso
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsTeaserWidget
+            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
+            template: default.php
+            vars:
+                attr:
+                    class: bg-light text-muted py-5
+                img_on_left: true
+                img_rounded: true
+                img_src: img/share-section1.jpg
+                img_alt: Share What You Create
+                teaser_title: Share What You Create
+                teaser_text: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore reiciendis, voluptate at alias laborum odit aliquidtempore perspiciatis repudiandae hic?
+                teaser_items:
+                    -
+                        icon: fas fa-check fa-2x
+                        text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi distinctio iusto, perspiciatis mollitia natus harum?
+                    -
+                        icon: fas fa-check fa-2x
+                        text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi distinctio iusto, perspiciatis mollitia natus harum?
+        -
+            name: looplab_footer_with_contact_us_button
+            type: picasso
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabFooterWithContactUseButtonWidget
+            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabFooterWithContactUseButtonWidget
+            template: default.php
+            vars:
+                attr:
+                    class: bg-dark
+                footer_title: LoopLab
+                footer_text: Copyright &copy; $year
+                footer_button_class: btn btn-primary
+                footer_button_text: Contact Us
+                modal_title: Contact Us
+                modal_form_action: ""
+                modal_form_method: post
+                modal_fields:
+                    -
+                        label: Name
+                        name: name
+                        type: text
+                    -
+                        label: Email
+                        name: email
+                        type: email
+                    -
+                        label: Message
+                        name: message
+                        type: textarea
+
+                modal_btn_text: Submit
+                modal_btn_class: btn btn-primary btn-block
+```
+
+
+A couple of things:
+
+- all widgets are picasso widgets from the [light kit bootstrap widget library](https://github.com/lingtalfi/Light_Kit_BootstrapWidgetLibrary). Read [the widgets documentation](https://github.com/lingtalfi/Light_Kit_BootstrapWidgetLibrary/blob/master/doc/pages/widget-variables-description.md) for more info about the widgets.
+- this is just the example page for the LoopLab theme, but it works the same for all other themes
+- you can find the page configuration files for all the themes in the [pages directory of this repository](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/config/kit/pages/Light_Kit_Demo)
+- more generally, you can find all source code for the demos in [the map directory of this repository](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map)
+
+ 
+And that's it for the real website demo.
+With the page configuration above, we get the LoopLab theme.
+
+Now it's the same principle for all themes.
+
+
+  
+Note: this planet is still a work in progress, and I'm currently working on the real websites versions for other demos.
+
+
+
 History Log
 =============
 
+- 0.6.0 -- 2019-05-03
+
+    - update the README.md with real website example for looplab  
+    
 - 0.5.0 -- 2019-05-01
 
     - update the README.md with online demos  

@@ -5,7 +5,12 @@
  * @var $this LightKitPageRenderer
  */
 
+
 use Ling\Light_Kit\PageRenderer\LightKitPageRenderer;
+
+
+$container = $this->getContainer();
+
 
 ?>
 <!DOCTYPE html>
@@ -22,11 +27,21 @@ use Ling\Light_Kit\PageRenderer\LightKitPageRenderer;
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
 
-    <?php if (true === $this->copilot->hasTitle()): ?><title><?php echo $this->copilot->getTitle(); ?></title><?php endif; ?>
 
-    <?php if (true === $this->copilot->hasDescription()): ?><meta name="description" content="<?php echo htmlspecialchars($this->copilot->getDescription()); ?>"><?php endif; ?>
+
+    <link rel="stylesheet"
+          href="<?php echo $container->get('kit_css_file_generator')->generate($this->copilot, $this->pageName); ?>">
+
+
+<!--        <link rel="stylesheet" href="css/style.css">-->
+
+    <?php if (true === $this->copilot->hasTitle()): ?>
+        <title><?php echo $this->copilot->getTitle(); ?></title><?php endif; ?>
+
+    <?php if (true === $this->copilot->hasDescription()): ?>
+        <meta name="description"
+              content="<?php echo htmlspecialchars($this->copilot->getDescription()); ?>"><?php endif; ?>
 
 </head>
 
