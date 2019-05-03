@@ -432,6 +432,8 @@ zones:
             vars:
                 attr:
                     class: looplab-dark
+                    id: explore-head-section
+                    id: create-head-section
                 title: Explore
                 text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
                 button_url: '#'
@@ -470,6 +472,7 @@ zones:
             vars:
                 attr:
                     class: text-white bg-primary
+                    id: create-head-section
                 title: Create
                 text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
                 button_url: '#'
@@ -507,6 +510,7 @@ zones:
             vars:
                 attr:
                     class: text-white bg-primary
+                    id: share-head-section
                 title: Share
                 text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
                 button_url: '#'
@@ -567,6 +571,10 @@ zones:
 
                 modal_btn_text: Submit
                 modal_btn_class: btn btn-primary btn-block
+
+
+
+
 ```
 
 
@@ -592,6 +600,10 @@ Note: this planet is still a work in progress, and I'm currently working on the 
 History Log
 =============
 
+- 0.6.1 -- 2019-05-03
+
+    - fix README.md looplab page example missing ids  
+    
 - 0.6.0 -- 2019-05-03
 
     - update the README.md with real website example for looplab  

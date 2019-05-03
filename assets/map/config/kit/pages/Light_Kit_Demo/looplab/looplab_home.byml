@@ -129,6 +129,8 @@ zones:
             vars:
                 attr:
                     class: looplab-dark
+                    id: explore-head-section
+                    id: create-head-section
                 title: Explore
                 text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
                 button_url: '#'
@@ -167,6 +169,7 @@ zones:
             vars:
                 attr:
                     class: text-white bg-primary
+                    id: create-head-section
                 title: Create
                 text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
                 button_url: '#'
@@ -204,6 +207,7 @@ zones:
             vars:
                 attr:
                     class: text-white bg-primary
+                    id: share-head-section
                 title: Share
                 text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
                 button_url: '#'
