@@ -15,9 +15,15 @@ zones:
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MainNavWidget
             widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
             template: default.php
+            skin: looplab-nav
             vars:
-                title: LoopLab
+                attr:
+                    id: main-nav
+                    class: bg-dark navbar-dark looplab-nav
+                title: LoopLAB
                 fixed_top: true
+                use_scrollspy: true
+                use_smooth_scrolling: true
                 title_url: /
                 expand_size: sm
                 links:
@@ -43,6 +49,8 @@ zones:
             widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsSignupFormWidget
             template: default.php
             vars:
+                attr:
+                    id: home
                 showTeaser: true
                 form_align_right: false
                 teaser_visible_size: lg
@@ -91,7 +99,6 @@ zones:
                 attr:
                     class: looplab-dark
                     id: explore-head-section
-                    id: create-head-section
                 title: Explore
                 text: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente doloribus ut iure itaque quibusdam rem accusantium deserunt reprehenderit sunt minus.
                 button_url: '#'

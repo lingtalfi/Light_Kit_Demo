@@ -1,5 +1,5 @@
 label: Mizuxe main page
-layout: templates/Light_Kit_Demo/layouts/mizuxe/prototype/mizuxe_main_layout.php
+layout: templates/Light_Kit_Demo/layouts/mizuxe/mizuxe_main_layout.php
 layout_vars: []
 
 title: Mizuxe one page theme
@@ -15,8 +15,11 @@ zones:
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MainNavWidget
             widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
             template: default.php
+            skin: mizuxe-nav
             vars:
-                title: MySite
+                attr:
+                    class: navbar-light fixed-top py-4 mizuxe-nav
+                title: Mizuxe
                 fixed_top: true
                 title_url: /
                 title_logo:
@@ -24,12 +27,11 @@ zones:
                     width: 50
                     height: 50
                     alt: Mizuxe logo
-                expand_size: sm # at which size does the burger menu expand (sm | md | lg) = sm
+                expand_size: md
                 links:
                     -
                         text: Home
                         url: "#home"
-#                        icon: fas fa-user
                     -
                         text: About
                         url: "#about"
@@ -41,6 +43,16 @@ zones:
                         text: Contact
                         url: "#contact"
                 links_align_right: true
+        -
+            name: mizuxe_two_columns_teaser
+            type: picasso
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MizuxeTwoColumnsTeaserWidget
+            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MizuxeTwoColumnsTeaserWidget
+            template: default.php
+            vars:
+                attr:
+                    class: py-5
+
 
         -
             name: mizuxe_two_columns_teaser

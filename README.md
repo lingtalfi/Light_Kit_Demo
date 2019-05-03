@@ -684,6 +684,10 @@ $container = $this->getContainer();
 History Log
 =============
 
+- 0.6.4 -- 2019-05-03
+
+    - update README.md  
+    
 - 0.6.3 -- 2019-05-03
 
     - update README.md looplab configuration page, now reflects the website more accurately (especially the nav)  
