@@ -114,7 +114,7 @@ Those files are copy/pasted in the application as is.
 If we take the LoopLab demo for instance, the structure looks like this:
 
 
-- [config/data/Light_Kit_Demo/kit/looplab/prototype/looplab_home.byml](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/config/kit/pages/Light_Kit_Demo/looplab/prototype/looplab_home.byml)
+- [config/data/Light_Kit_Demo/kit/looplab/prototype/looplab_home.byml](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/config/data/Light_Kit_Demo/kit/looplab/prototype/looplab_home.byml)
 - [templates/Light_Kit_Demo/layouts/prototype/looplab_main_layout.php](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/templates/Light_Kit_Demo/layouts/looplab/prototype/looplab_main_layout.php)
 - [templates/Light_Kit_Demo/widgets/prototype/looplab/](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/templates/Light_Kit_Demo/widgets/prototype/looplab)
 - [templates/Light_Kit_Demo/widgets/prototype/looplab/looplab_footer_with_contact_us_button.php](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/templates/Light_Kit_Demo/widgets/prototype/looplab/looplab_footer_with_contact_us_button.php)
@@ -785,6 +785,10 @@ Good luck!
 History Log
 =============
 
+- 1.1.3 -- 2019-08-14
+
+    - fix doc 404 link 
+    
 - 1.1.2 -- 2019-08-14
 
     - fix erroneous packing of repo 
