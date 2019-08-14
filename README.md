@@ -785,6 +785,10 @@ Good luck!
 History Log
 =============
 
+- 1.1.2 -- 2019-08-14
+
+    - fix erroneous packing of repo 
+    
 - 1.1.1 -- 2019-08-14
 
     - update the repo to accommodate new light philosophy about app recommended structure
