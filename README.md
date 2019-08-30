@@ -667,8 +667,8 @@ use Ling\Light_Kit\PageRenderer\LightKitPageRenderer;
 
 
 $container = $this->getContainer();
-$jsLibs =  $this->copilot->getJsLibraries();
-$cssLibs =  $this->copilot->getCssLibraries();
+$jsLibs =  $this->copilot->getJsUrls();
+$cssLibs =  $this->copilot->getCssUrls();
 
 ?>
 <!DOCTYPE html>
@@ -785,6 +785,10 @@ Good luck!
 History Log
 =============
 
+- 1.2.0 -- 2019-08-30
+
+    - taking into account the new HtmlPageCopilot interface 
+    
 - 1.1.3 -- 2019-08-14
 
     - fix doc 404 link 
