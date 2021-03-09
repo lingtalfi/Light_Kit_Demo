@@ -13,7 +13,7 @@ zones:
             name: mizuxe_large_main_nav_with_logo
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MainNavWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
             template: default.php
             skin: mizuxe-nav
             vars:
@@ -51,7 +51,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MizuxeTwoColumnsTeaserWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MizuxeTwoColumnsTeaserWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MizuxeTwoColumnsTeaserWidget
             template: default.php
             vars:
                 attr:
@@ -78,7 +78,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MizuxeNewsletterSignupHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MizuxeNewsletterSignupHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MizuxeNewsletterSignupHeaderWidget
             template: default.php
             vars:
                 attr:
@@ -99,7 +99,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\ColoredBoxesWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ColoredBoxesWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ColoredBoxesWidget
             template: default.php
             vars:
                 attr:
@@ -146,7 +146,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\OneColumnAccordionWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/OneColumnAccordionWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/OneColumnAccordionWidget
             template: default.php
             vars:
                 attr:
@@ -201,7 +201,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MizuxeFourColumnsOurStaffWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MizuxeFourColumnsOurStaffWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MizuxeFourColumnsOurStaffWidget
             template: default.php
             vars:
                 attr:
@@ -284,7 +284,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MizuxeContactFormWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MizuxeContactFormWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MizuxeContactFormWidget
             template: default.php
             vars:
                 attr:
@@ -329,7 +329,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\SimpleFooterWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/SimpleFooterWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/SimpleFooterWidget
             template: default.php
             vars:
                 attr:

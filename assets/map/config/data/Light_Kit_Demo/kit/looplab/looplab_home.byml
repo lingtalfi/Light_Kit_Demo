@@ -13,7 +13,7 @@ zones:
             name: main_nav
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MainNavWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
             template: default.php
             skin: looplab-nav
             vars:
@@ -46,7 +46,7 @@ zones:
             name: looplab_two_columns_signup_form
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsSignupFormWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsSignupFormWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsSignupFormWidget
             template: default.php
             vars:
                 attr:
@@ -92,7 +92,7 @@ zones:
             name: looplab_monochrome_header
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabMonoChromeHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
             template: default.php
             skin: looplab-dark
             vars:
@@ -110,7 +110,7 @@ zones:
             name: looplab_two_columns_teaser
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsTeaserWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
             template: default.php
             vars:
                 attr:
@@ -132,7 +132,7 @@ zones:
             name: looplab_monochrome_header
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabMonoChromeHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
             template: default.php
             vars:
                 attr:
@@ -147,7 +147,7 @@ zones:
             name: looplab_two_columns_teaser
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsTeaserWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
             template: default.php
             skin: looplab-dark
             vars:
@@ -170,7 +170,7 @@ zones:
             name: looplab_monochrome_header
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabMonoChromeHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
             template: default.php
             vars:
                 attr:
@@ -186,7 +186,7 @@ zones:
             name: looplab_two_columns_teaser
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsTeaserWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
             template: default.php
             vars:
                 attr:
@@ -210,7 +210,7 @@ zones:
             name: looplab_footer_with_contact_us_button
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabFooterWithContactUseButtonWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabFooterWithContactUseButtonWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabFooterWithContactUseButtonWidget
             template: default.php
             vars:
                 attr:

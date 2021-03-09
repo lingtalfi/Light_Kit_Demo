@@ -13,7 +13,7 @@ zones:
             name: main_nav
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MainNavWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
             template: default.php
             vars:
                 attr:
@@ -33,7 +33,7 @@ zones:
             name: blogen_icon_header
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\BlogenIconHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/BlogenIconHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/BlogenIconHeaderWidget
             template: default.php
             vars:
                 attr:
@@ -46,7 +46,7 @@ zones:
             name: blogen_header_with_action_buttons
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\BlogenHeaderWithActionButtonsWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/BlogenHeaderWithActionButtonsWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/BlogenHeaderWithActionButtonsWidget
             template: default.php
             vars:
                 attr:
@@ -58,7 +58,7 @@ zones:
             name: blogen_form
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\BlogenFormWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/BlogenFormWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/BlogenFormWidget
             template: login.php
             vars:
                 attr:
@@ -92,7 +92,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\SimpleFooterWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/SimpleFooterWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/SimpleFooterWidget
             template: default.php
             vars:
                 attr:

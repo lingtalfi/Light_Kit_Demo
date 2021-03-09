@@ -198,8 +198,8 @@ Let's create the [LoopLab theme](http://lingtalfi/Light_Kit_Demo?site=looplab) u
 Before we start, let's say that all picasso widgets used for all demos can be found in the [Light_Kit_BootstrapWidgetLibrary repository](https://github.com/lingtalfi/Light_Kit_BootstrapWidgetLibrary).
 
 
-- [web assets](https://github.com/lingtalfi/Light_Kit_BootstrapWidgetLibrary/tree/master/assets/map/www/plugins/Light_Kit_BootstrapWidgetLibrary)
-- [widget directories](https://github.com/lingtalfi/Light_Kit_BootstrapWidgetLibrary/tree/master/assets/map/templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso)
+- [web assets](https://github.com/lingtalfi/Light_Kit_BootstrapWidgetLibrary/tree/master/assets/map/www/libs/universe/Ling/Light_Kit_BootstrapWidgetLibrary)
+- [widget directories](https://github.com/lingtalfi/Light_Kit_BootstrapWidgetLibrary/tree/master/assets/map/templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso)
 - [widget classes](https://github.com/lingtalfi/Light_Kit_BootstrapWidgetLibrary/tree/master/Widget/Picasso)
 - [widget descriptions](https://github.com/lingtalfi/Light_Kit_BootstrapWidgetLibrary/blob/master/doc/pages/widget-variables-description.md)
 
@@ -398,7 +398,7 @@ zones:
             name: main_nav
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MainNavWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
             template: default.php
             skin: looplab-nav
             vars:
@@ -431,7 +431,7 @@ zones:
             name: looplab_two_columns_signup_form
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsSignupFormWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsSignupFormWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsSignupFormWidget
             template: default.php
             vars:
                 attr:
@@ -477,7 +477,7 @@ zones:
             name: looplab_monochrome_header
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabMonoChromeHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
             template: default.php
             skin: looplab-dark
             vars:
@@ -495,7 +495,7 @@ zones:
             name: looplab_two_columns_teaser
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsTeaserWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
             template: default.php
             vars:
                 attr:
@@ -517,7 +517,7 @@ zones:
             name: looplab_monochrome_header
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabMonoChromeHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
             template: default.php
             vars:
                 attr:
@@ -532,7 +532,7 @@ zones:
             name: looplab_two_columns_teaser
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsTeaserWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
             template: default.php
             skin: looplab-dark
             vars:
@@ -555,7 +555,7 @@ zones:
             name: looplab_monochrome_header
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabMonoChromeHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabMonoChromeHeaderWidget
             template: default.php
             vars:
                 attr:
@@ -571,7 +571,7 @@ zones:
             name: looplab_two_columns_teaser
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabTwoColumnsTeaserWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabTwoColumnsTeaserWidget
             template: default.php
             vars:
                 attr:
@@ -595,7 +595,7 @@ zones:
             name: looplab_footer_with_contact_us_button
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\LoopLabFooterWithContactUseButtonWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabFooterWithContactUseButtonWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/LoopLabFooterWithContactUseButtonWidget
             template: default.php
             vars:
                 attr:
@@ -790,6 +790,10 @@ Good luck!
 History Log
 =============
 
+- 1.2.5 -- 2021-03-09
+
+    - update README to reflect path change from Ling.Light_Kit_BootstrapWidgetLibrary
+  
 - 1.2.4 -- 2021-03-09
 
     - rename templates dir to Ling.Light_Kit_Demo, moved www/plugins assets to www/libs/universe dir

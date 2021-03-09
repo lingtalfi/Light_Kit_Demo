@@ -13,7 +13,7 @@ zones:
             name: main_nav
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\MainNavWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/MainNavWidget
             template: default.php
             skin: glozzom
             vars:
@@ -46,7 +46,7 @@ zones:
             name: glozzom_showcase_carousel
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\ShowCaseCarouselWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ShowCaseCarouselWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ShowCaseCarouselWidget
             template: default.php
             vars:
                 attr:
@@ -97,7 +97,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\IconTeaserWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/IconTeaserWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/IconTeaserWidget
             template: default.php
             vars:
                 attr:
@@ -128,7 +128,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\ParallaxHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ParallaxHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ParallaxHeaderWidget
             template: default.php
             vars:
                 attr:
@@ -147,7 +147,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\GlozzomTwoColumnsTeaserWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/GlozzomTwoColumnsTeaserWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/GlozzomTwoColumnsTeaserWidget
             template: default.php
             vars:
                 attr:
@@ -167,7 +167,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\ParallaxHeaderWithVideoTriggerWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ParallaxHeaderWithVideoTriggerWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ParallaxHeaderWithVideoTriggerWidget
             template: default.php
             vars:
                 attr:
@@ -184,7 +184,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\PhotoGalleryWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/PhotoGalleryWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/PhotoGalleryWidget
             template: default.php
             vars:
                 attr:
@@ -221,7 +221,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\NewsletterHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/NewsletterHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/NewsletterHeaderWidget
             template: default.php
             vars:
                 attr:
@@ -246,7 +246,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\SimpleFooterWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/SimpleFooterWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/SimpleFooterWidget
             template: default.php
             skin: dark-skin
             vars:
