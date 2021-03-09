@@ -1,6 +1,6 @@
 Light_Kit_Demo
 ===========
-2019-04-25 -> 2021-03-05
+2019-04-25 -> 2021-03-09
 
 
 
@@ -120,10 +120,10 @@ If we take the LoopLab demo for instance, the structure looks like this:
 
 
 - [config/data/Light_Kit_Demo/kit/looplab/prototype/looplab_home.byml](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/config/data/Light_Kit_Demo/kit/looplab/prototype/looplab_home.byml)
-- [templates/Light_Kit_Demo/layouts/prototype/looplab_main_layout.php](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/templates/Light_Kit_Demo/layouts/looplab/prototype/looplab_main_layout.php)
-- [templates/Light_Kit_Demo/widgets/prototype/looplab/](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/templates/Light_Kit_Demo/widgets/prototype/looplab)
-- [templates/Light_Kit_Demo/widgets/prototype/looplab/looplab_footer_with_contact_us_button.php](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/templates/Light_Kit_Demo/widgets/prototype/looplab/looplab_footer_with_contact_us_button.php)
-- [www/plugins/Light_Kit_Demo/looplab](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/www/plugins/Light_Kit_Demo/looplab)
+- [templates/Ling.Light_Kit_Demo/layouts/prototype/looplab_main_layout.php](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/templates/Ling.Light_Kit_Demo/layouts/looplab/prototype/looplab_main_layout.php)
+- [templates/Ling.Light_Kit_Demo/widgets/prototype/looplab/](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/templates/Ling.Light_Kit_Demo/widgets/prototype/looplab)
+- [templates/Ling.Light_Kit_Demo/widgets/prototype/looplab/looplab_footer_with_contact_us_button.php](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/templates/Ling.Light_Kit_Demo/widgets/prototype/looplab/looplab_footer_with_contact_us_button.php)
+- [www/libs/universe/Ling/Light_Kit_Demo/looplab](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/www/libs/universe/Ling/Light_Kit_Demo/looplab)
 
 
 
@@ -139,9 +139,9 @@ Then the layout (looplab_main_layout.php) is the skeleton of the page. We can se
 is one of the most useful method to use in a layout, allowing us to print a zone (group of widgets).
 
 
-Then the **templates/Light_Kit_Demo/widgets/prototype/looplab** directory contains all the prototype widgets used for the LoopLab theme.
+Then the **templates/Ling.Light_Kit_Demo/widgets/prototype/looplab** directory contains all the prototype widgets used for the LoopLab theme.
  
-And last but not least the **www/plugins/Light_Kit_Demo/looplab** directory contains all the assets used for the LoopLab theme.
+And last but not least the **www/libs/universe/Ling/Light_Kit_Demo/looplab** directory contains all the assets used for the LoopLab theme.
 
 
 On the server side, I just use regular Light code, here is my code for the looplab demo:
@@ -207,7 +207,7 @@ Before we start, let's say that all picasso widgets used for all demos can be fo
 The only thing that is not there is the page configuration files and the layouts, which are stored inside the **Light_Kit_Demo** repository (this repository):
 
 - [page configuration files](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/config/data/Light_Kit_Demo/kit)
-- [layouts](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/templates/Light_Kit_Demo/layouts)
+- [layouts](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/templates/Ling.Light_Kit_Demo/layouts)
 
 
 And so that being said, let's go over one example, and from that you should be able to work you way around for all demos (it's the same pattern every time).
@@ -384,7 +384,7 @@ What follows is the content of that file:
 
 ```yaml
 label: LoopLab main page
-layout: templates/Light_Kit_Demo/layouts/looplab/looplab_main_layout.php
+layout: templates/Ling.Light_Kit_Demo/layouts/looplab/looplab_main_layout.php
 layout_vars: []
 
 title: LoopLab one page theme
@@ -656,7 +656,7 @@ The layout page
 
 The layout used by the LoopLab home page has the following content.
 
-- you can find the layouts for all the themes in the [layout directory of this repository](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/templates/Light_Kit_Demo/layouts)
+- you can find the layouts for all the themes in the [layout directory of this repository](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/templates/Ling.Light_Kit_Demo/layouts)
 
 ```php
 <?php
@@ -789,6 +789,10 @@ Good luck!
 
 History Log
 =============
+
+- 1.2.4 -- 2021-03-09
+
+    - rename templates dir to Ling.Light_Kit_Demo, moved www/plugins assets to www/libs/universe dir
 
 - 1.2.3 -- 2021-03-05
 
