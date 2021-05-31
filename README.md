@@ -119,7 +119,7 @@ Those files are copy/pasted in the application as is.
 If we take the LoopLab demo for instance, the structure looks like this:
 
 
-- [config/data/Light_Kit_Demo/kit/looplab/prototype/looplab_home.byml](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/config/data/Light_Kit_Demo/kit/looplab/prototype/looplab_home.byml)
+- [config/data/Ling.Light_Kit_Demo/Ling.Light_Kit/looplab/prototype/looplab_home.byml](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/config/data/Ling.Light_Kit_Demo/Ling.Light_Kit/looplab/prototype/looplab_home.byml)
 - [templates/Ling.Light_Kit_Demo/layouts/prototype/looplab_main_layout.php](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/templates/Ling.Light_Kit_Demo/layouts/looplab/prototype/looplab_main_layout.php)
 - [templates/Ling.Light_Kit_Demo/widgets/prototype/looplab/](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/templates/Ling.Light_Kit_Demo/widgets/prototype/looplab)
 - [templates/Ling.Light_Kit_Demo/widgets/prototype/looplab/looplab_footer_with_contact_us_button.php](https://github.com/lingtalfi/Light_Kit_Demo/blob/master/assets/map/templates/Ling.Light_Kit_Demo/widgets/prototype/looplab/looplab_footer_with_contact_us_button.php)
@@ -174,7 +174,7 @@ $light->setContainer($container);
 
 
 $light->registerRoute("/Light_Kit_Demo", function (LightServiceContainerInterface $service) {
-    return $service->get("kit")->renderPage('Light_Kit_Demo/kit/looplab/prototype/looplab_home');
+    return $service->get("kit")->renderPage('Light_Kit_Demo/Ling.Light_Kit/looplab/prototype/looplab_home');
 });
 $light->run();
 
@@ -206,7 +206,7 @@ Before we start, let's say that all picasso widgets used for all demos can be fo
 
 The only thing that is not there is the page configuration files and the layouts, which are stored inside the **Light_Kit_Demo** repository (this repository):
 
-- [page configuration files](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/config/data/Light_Kit_Demo/kit)
+- [page configuration files](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/config/data/Ling.Light_Kit_Demo/kit)
 - [layouts](https://github.com/lingtalfi/Light_Kit_Demo/tree/master/assets/map/templates/Ling.Light_Kit_Demo/layouts)
 
 
@@ -267,7 +267,7 @@ $light->setContainer($container);
 
 
 $light->registerRoute("/Light_Kit_Demo", function (LightServiceContainerInterface $service) {
-    return $service->get("kit")->renderPage('Light_Kit_Demo/kit/looplab/looplab_home');
+    return $service->get("kit")->renderPage('Light_Kit_Demo/Ling.Light_Kit/looplab/looplab_home');
 });
 $light->run();
 
@@ -373,10 +373,10 @@ The page configuration is very important for various reasons:
 It's basically where the pages are created.
 
 
-Back to our demo: from the **index.php**, we call the **Light_Kit_Demo/kit/looplab/looplab_home** page.
+Back to our demo: from the **index.php**, we call the **Light_Kit_Demo/Ling.Light_Kit/looplab/looplab_home** page.
 
 Now because of our kit service configuration (the **rootDir** property from the previous section in particular, remember?), the page configuration path 
-resolves to **${app_dir}/config/data/Light_Kit_Demo/kit/looplab/looplab_home.byml**.
+resolves to **${app_dir}/config/data/Ling.Light_Kit_Demo/Ling.Light_Kit/looplab/looplab_home.byml**.
 
 
 What follows is the content of that file:
@@ -789,6 +789,10 @@ Good luck!
 
 History Log
 =============
+
+- 1.2.6 -- 2021-05-31
+
+    - Removing trailing plus in lpi-deps file (to work with Light_PlanetInstaller:2.0.0 api
 
 - 1.2.5 -- 2021-03-09
 
